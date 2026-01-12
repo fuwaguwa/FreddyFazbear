@@ -4,7 +4,6 @@ declare global {
       NODE_ENV: string;
       SOCKS_PROXY: string;
       BOT_TOKEN: string;
-      SAUCENAO_API_KEY: string;
       MONGODB_URI: string;
       GELBOORU_API_KEY: string;
       GELBOORU_USER_ID: string;

@@ -10,7 +10,6 @@ const requiredEnvVars = [
   "NODE_ENV",
   "SOCKS_PROXY",
   "BOT_TOKEN",
-  "SAUCENAO_API_KEY",
   "MONGODB_URI",
   "GELBOORU_API_KEY",
   "GELBOORU_USER_ID",
