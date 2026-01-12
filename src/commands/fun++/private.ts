@@ -1,6 +1,13 @@
 import { ApplyOptions } from "@sapphire/decorators";
 import { Subcommand, type SubcommandOptions } from "@sapphire/plugin-subcommands";
-import { ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder } from "discord.js";
+import {
+  ActionRowBuilder,
+  ApplicationIntegrationType,
+  ButtonBuilder,
+  ButtonStyle,
+  EmbedBuilder,
+  InteractionContextType,
+} from "discord.js";
 import { fetchRandomLewd } from "../../lib/utils/db";
 import { randomItem } from "../../lib/utils/misc";
 
@@ -36,6 +43,12 @@ export class PrivateCommand extends Subcommand {
         .setName(this.name)
         .setDescription(this.description)
         .setNSFW(true)
+        .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+        .setContexts([
+          InteractionContextType.Guild,
+          InteractionContextType.BotDM,
+          InteractionContextType.PrivateChannel,
+        ])
         .addSubcommand(command =>
           command
             .setName("hoyo")
